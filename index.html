@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://db.onlinewebfonts.com/c/643121b5d2cc9943eff9b59054cc29ba?family=DINNextRoundedLTW01-Light" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f5dc;
+            text-align: center;
+            font-family: "Arial", sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: url("back.jpg") no-repeat center center fixed;
+            background-size: cover;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 43%; /* Ajustar el ancho del cuadro */
+            margin: 0 auto; /* Centrar horizontalmente */
+        }
+
+        .container-padre {
+            width: 100%;
+        }
+
+        .confirm-wrappertwo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(104, 132, 156, 0.8);
+            width: 100%;
+            overflow-x: auto; /* Agrega un desplazamiento (scroll) horizontal */
+        }
+
+        .gallery-container {
+            width: 1200px; /* Define un tamaño específico para el contenedor */
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+
+        .mygallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+            grid-gap: 10px; /*espacio entre imagenes*/
+            grid-auto-rows: 200px;
+            grid-auto-flow: column dense;
+            width: 70%;
+            height: 430px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow-x: auto;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+            .mygallery img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 5px; /* Agrega bordes redondeados a las imágenes */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Agrega sombra a las imágenes */
+            }
+
+                .mygallery img:nth-child(2n) {
+                    grid-area: span 2 / span 3;
+                }
+
+                .mygallery img:nth-child(3n) {
+                    grid-area: span 1 / span 3;
+                }
+
+                .mygallery img:nth-child(7n) {
+                    grid-area: span 3 / span 4;
+                }
+
+                .mygallery img:nth-child(9n) {
+                    grid-area: span 2 / span 2;
+                }
+
+        .responsive-image {
+        }
+
+        .gallery-item {
+            width: 100%;
+        }
+
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+        body, .container-padre {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #dd4b39;
+            font-size: 30px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-size: 44px;
+            font-family: 'dancingscript-regular', 'dancing script';
+            font-style: normal;
+            font-weight: normal;
+            color: #767676;
+        }
+
+        .myh2 {
+            font-size: 44px;
+            font-family: 'dancingscript-regular', 'dancing script';
+            font-style: normal;
+            color: #767676;
+        }
+
+
+        h3 {
+            font-family: 'questrial', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 33px;
+            line-height: inherit /* Ajusta el valor de línea según tus preferencias */;
+            color: #d4b759;
+        }
+
+        h4 {
+            font-family: 'questrial', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: inherit /* Ajusta el valor de línea según tus preferencias */;
+            color: #d4b759;
+        }
+
+        p {
+            font-family: 'DINNextRoundedLTW01-Light', sans-serif; /* Reemplaza 'DIN Next' por el nombre de la fuente que obtuviste */
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: inherit; /* Ajusta el valor de línea según tus preferencias */
+            ;
+            color: #757575;
+        }
+
+        a {
+            background-color: #54749c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+            a:hover {
+                background-color: black;
+                color: white;
+            }
+
+        .label {
+            font-family: sans-serif;
+            font-style: normal;
+            font-size: 28px;
+            color: #638198;
+        }
+
+            .label.formal {
+                font-family: 'dancingscript-regular', 'dancing script', cursive;
+                font-style: normal;
+                font-size: 23px;
+                color: #767676;
+            }
+
+        button {
+            font-family: 'questrial', sans-serif;
+            background-color: transparent;
+            color: gray;
+            border: 2px solid #767676;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .centered-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 30px auto;
+            background-color: yellow;
+            overflow: hidden;
+        }
+
+            .circle-photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .line {
+            border-top: 2px solid black;
+            margin: 30px;
+            width: 70%;
+            height: 2px;
+            margin: 30px auto; /* Centrar horizontalmente */
+        }
+
+        .column {
+            display: inline-block;
+            width: 45%;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .location {
+            border: 1px solid black;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .recommendations {
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: -2px 0 7px 0px rgba(0, 0, 0, 0.2), 2px 0 7px 0px rgba(0, 0, 0, 0.2), 0 4px 16px 6px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            display: inline-block;
+        }
+
+        .recommendationsOther {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: -2px 0 7px 0px rgba(0, 0, 0, 0.2), 2px 0 7px 0px rgba(0, 0, 0, 0.2), 0 4px 16px 6px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            display: inline-block;
+        }
+
+        .reception-container {
+            margin-top: 0;
+        }
+
+        .recommendations h2 {
+            font-size: 44px;
+            font-family: 'dancingscript-regular', 'dancing script';
+            font-style: normal;
+            font-weight: normal;
+            color: #ddaf36;
+        }
+
+        .recommendations span {
+            font-family: 'dancingscript-regular', 'dancing script';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: inherit;
+            color: #757575;
+        }
+
+
+        .dresscode {
+            margin-bottom: 20px;
+        }
+
+            .dresscode h4 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Ajusta la separación entre las columnas */
+        }
+
+        .col {
+            flex: 1;
+            text-align: center;
+            padding: 10px; /* Ajusta el espaciado interno de las columnas */
+        }
+
+            .col:first-child {
+                text-align: right; /* Alinea la columna 1 a la derecha */
+                margin-right: 30px; /* Ajusta la separación entre las columnas */
+            }
+
+            .col:last-child {
+                text-align: left; /* Alinea la columna 1 a la derecha */
+                margin-left: 30px; /* Ajusta la separación entre las columnas */
+            }
+
+        .image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .image-wrapper img {
+            max-height: 30px;
+            margin-right: 10px;
+        }
+
+        .confirm-wrapper {
+            background-color: #ece6e1;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            .confirm-wrapper
+            h3 {
+                font-family: 'questrial', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 33px;
+                line-height: inherit /* Ajusta el valor de línea según tus preferencias */;
+                color: #d4b759;
+            }
+
+            .confirm-wrapper
+            p {
+                color: #555;
+                margin-bottom: 20px;
+                font-family: 'dancingscript-regular', 'dancing script', cursive;
+                font-style: normal;
+                font-size: 24px;
+            }
+
+        .confirm-message {
+            color: #555;
+            margin-bottom: 20px;
+            font-family: 'dancingscript-regular', 'dancing script', cursive;
+            font-style: normal;
+            font-size: 22px;
+        }
+
+        .confirm-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+            .confirm-buttons button {
+                background-color: #ddaf36;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                margin: 0 10px;
+                cursor: pointer;
+            }
+
+        .hashtag {
+            color: #dd4b39;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        .invitation-development {
+            background-color: #54749c;
+            color: red;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            .invitation-development p {
+                font-size: 12px;
+                color: white;
+                margin: 0; /* Establecer el margen inferior en 0 */
+            }
+
+        .video-container {
+        }
+
+            .video-container video {
+            }
+
+        .scroll-container {
+            overflow-x: scroll;
+            scroll-snap-type: x proximity;
+            white-space: nowrap;
+        }
+
+        .image-wrappermy {
+            display: inline-block;
+            scroll-snap-align: start;
+        }
+
+            .image-wrappermy img {
+                width: 100%;
+                height: auto;
+            }
+
+        @media (max-width: 480px) {
+            body {
+                background-color: #f5f5dc;
+                text-align: center;
+                font-family: "Arial", sans-serif;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                background: url("backm.jpg") no-repeat center center fixed;
+                background-size: cover;
+                width: 100%;
+            }
+
+            .confirm-wrappertwo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(104, 132, 156, 0.8);
+                width: 70%;
+                overflow: hidden;
+            }
+
+            /**/
+            .mygallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
+                grid-gap: 10px;
+                grid-auto-rows: 200px;
+                grid-auto-flow: column dense;
+                width: max-content;
+                height: 450px;
+                white-space: nowrap;
+                margin: 0 auto; /* Simplificado el margen */
+            }
+
+            .mygallery-wrapper {
+                width: 80%;
+                margin: 0 auto;
+                overflow-x: auto;
+            }
+
+            .mygallery img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+                .mygallery img:nth-child(2n) {
+                    grid-area: span 2 / span 3;
+                }
+
+                .mygallery img:nth-child(3n) {
+                    grid-area: span 1 / span 3;
+                }
+
+                .mygallery img:nth-child(7n) {
+                    grid-area: span 3 / span 4;
+                }
+
+                .mygallery img:nth-child(9n) {
+                    grid-area: span 2 / span 2;
+                }
+
+            /**/
+            .video-container {
+                position: relative;
+                width: 100%;
+                height: calc(100vw * 4 / 3); /* Proporción de aspecto 16:9 */
+                overflow: hidden;
+            }
+
+            .responsive-image {
+                width: 40%; /* Tamaño original en dispositivos de escritorio */
+            }
+
+            .video-container video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .container {
+                max-width: 100vw;
+                padding: 10px;
+            }
+
+            h1 {
+                color: #dd4b39;
+                font-size: 24px;
+                margin-top: 30px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-family: 'questrial', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: inherit;
+                color: #d4b759;
+            }
+
+            p {
+                font-family: 'DINNextRoundedLTW01-Light', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: inherit;
+                color: #757575;
+            }
+
+            a {
+                background-color: #54749c;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                text-decoration: none;
+                transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            }
+
+            .label {
+                font-family: sans-serif;
+                font-style: normal;
+                font-size: 24px;
+                color: #638198;
+            }
+
+                .label.formal {
+                    font-family: 'dancingscript-regular', 'dancing script', cursive;
+                    font-style: normal;
+                    font-size: 20px;
+                    color: #767676;
+                }
+
+            button {
+                font-family: 'questrial', sans-serif;
+                background-color: transparent;
+                color: gray;
+                border: 2px solid #767676;
+                padding: 10px 20px;
+                font-size: 16px;
+                margin-right: 20px;
+                font-weight: bold;
+            }
+
+            .circle-photo {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                margin: 30px auto;
+                background-color: yellow;
+                overflow: hidden;
+            }
+
+                .circle-photo img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            .line {
+                border-top: 2px solid black;
+                margin: 30px;
+                width: 70%;
+                height: 2px;
+                margin: 30px auto;
+            }
+
+            .column {
+                display: inline-block;
+                width: 100%;
+                text-align: left;
+                margin-top: 30px;
+            }
+
+            .column {
+                display: block;
+                width: 100%;
+                text-align: left;
+                margin-top: 20px;
+            }
+
+            .location {
+                display: block;
+                margin-top: 20px;
+            }
+
+            .recommendations {
+                padding: 10px;
+                margin-top: 20px;
+            }
+
+                .recommendations h3 {
+                    font-size: 20px;
+                }
+
+            .dresscode h4 {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .row {
+                flex-wrap: wrap;
+            }
+
+            .col {
+                flex: 1 0 100%;
+                text-align: center;
+                padding: 5px;
+            }
+
+                .col:first-child {
+                    text-align: center;
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+
+                .col:last-child {
+                    text-align: center;
+                    margin-left: 0;
+                    margin-bottom: 10px;
+                }
+
+            .image-wrapper img {
+                max-height: 20px;
+                margin-right: 5px;
+            }
+
+            .confirm-message {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .confirm-buttons {
+                margin-top: 10px;
+            }
+
+                .confirm-buttons button {
+                    font-size: 14px;
+                    margin: 0 5px;
+                }
+
+            .hashtag {
+                margin-top: 20px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #68849c "><br /></div>
+    <br />
+    <p> <span style="font-family: 'Tangerine', cursive; font-style: normal; font-weight: 400; font-size: 47px; color: #757575; ">MariaM</span>
+        <span style="font-family: 'Tangerine', cursive; font-style: normal; font-weight: 400; font-size: 50px; color: #ddaf36; ">&nbsp;&&nbsp; </span>
+            <span style="font-family: 'Tangerine', cursive; font-style: normal; font-weight: 400; font-size: 47px; color: #757575; ">AndrésF</span>
+    </p>
+    <br />
+
+
+    <div class="">
+        <div class="video-container">
+            <video src="file.mp4" controls></video>
+        </div>
+
+        <div class="container">
+            <div class="recommendations" style="display: flex; justify-content: center;">
+                <div style="width: 85%;">
+                    <h2>¡Nos Casamos!</h2>
+                    <div>
+                        <span>
+                            El hombre y la mujer fueron creados el uno para el otro: "No es bueno que el hombre esté solo" (Gn 2, 18). "Por eso deja el hombre a su padre y a su madre y se une a su mujer, y se hacen una sola carne".
+                        </span>
+                        <br /><br />
+                        <span>
+                            De este modo, Dios ha creado al hombre y a la mujer por amor y los ha llamado también al amor. Por tanto, el amor mutuo entre ellos se convierte en imagen del amor de Dios hacia nosotros.
+                        </span>
+                    </div>
+                    <br />
+                    <img src="regalo.png" alt="Dresscode">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="recommendations" style="display: flex; justify-content: center;">
+                <div style="width: 90%; margin-top:10px;">
+                    <div>
+                        <br /><br />
+                        <span>
+                            En este día de amor y felicidad, queremos compartir nuestra alegría con todos aquellos que han sido testigos de nuestra historia, aquellos que han estado a nuestro lado en cada paso del camino. Tu presencia, regalo inolvidable, dará luz y calidez a nuestra unión, llenándola de bendiciones y buenos deseos.
+                        </span>
+                        <br /><br />
+                        <span>Te invitamos a que te unas a nosotros en este momento inolvidable de amor, compromiso y esperanza.</span>
+                    </div>
+                    <br />
+                    <img src="dresscode.png" alt="Dresscode">
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="recommendations" style="width: 100%; text-align: center;">
+                <p style="font-family: 'Lobster', cursive; font-style: normal; font-weight: 400; font-size: 26px; color: #767676;">25 de Noviembre de 2023</p>
+                <h4 style="color: #ddaf36; font-family: 'Arial', sans-serif; font-size: 21px; font-weight: normal;">
+                    F  A  L  T  A  N
+                </h4>
+                <div style="display: flex; justify-content: center; align-items: center; font-family: 'Arial', sans-serif;">
+                    <div style="text-align: center; margin-right: 20px;">
+                        <span id="days" style="font-weight: bold; font-size: 20px; color: #767676; line-height: 3;"></span><br>
+                        <span style="color: #ddaf36; font-size: 15px;">Dias</span>
+                    </div>
+                    <div style="text-align: center; margin-right: 20px;">
+                        <span style="font-weight: bold; font-size: 20px; color: #767676; line-height: 3;">:</span><br>
+                        <span style="color: #ddaf36; font-size: 15px;">&nbsp;</span>
+                    </div>
+                    <div style="text-align: center; margin-right: 20px;">
+                        <span id="hours" style="font-weight: bold; font-size: 20px; color: #767676; line-height: 3;"></span><br>
+                        <span style="color: #ddaf36; font-size: 15px; margin-bottom: 10px;">Horas</span>
+                    </div>
+                    <div style="text-align: center; margin-right: 20px;">
+                        <span style="font-weight: bold; font-size: 20px; color: #767676; line-height: 3;">:</span><br>
+                        <span style="color: #ddaf36; font-size: 15px;">&nbsp;</span>
+                    </div>
+                    <div style="text-align: center; margin-right: 20px;">
+                        <span id="minutes" style="font-weight: bold; font-size: 20px; color: #767676; line-height: 3;"></span><br>
+                        <span style="color: #ddaf36; font-size: 15px; margin-bottom: 10px;">Minutos</span>
+                    </div>
+                    <div style="text-align: center; margin-right: 20px;">
+                        <span style="font-weight: bold; font-size: 20px; color: #767676; line-height: 3;">:</span><br>
+                        <span style="color: #ddaf36; font-size: 15px;">&nbsp;</span>
+                    </div>
+                    <div style="text-align: center;">
+                        <span id="seconds" style="font-weight: bold; font-size: 20px; color: #767676; line-height: 3;"></span><br>
+                        <span style="color: #ddaf36; font-size: 15px; margin-bottom: 10px;">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="recommendations" style="display: flex; justify-content: center;">
+                <div class="reception-container">
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+
+                            <p style="font-family: 'Lobster', cursive; font-style: normal; font-weight: 400; font-size: 36px; color: #ddaf36;">Ceremonia</p>
+
+                            <img style="margin: 0;" src="iglesia.png" alt="iglesia"> <br />
+                            <p style="margin: 0;">Parroquia San Luis Gonzaga</p>
+                            <p style="margin: 0;">Parque Principal</p>
+                            <p style="margin: 0;">Villanueva - Santander</p>
+                            <br />
+                            <div style="display: flex; justify-content: center; margin-top:5px;">
+                                <button>3:00 PM</button>
+                                <a href="https://maps.app.goo.gl/m8XaZU6xkEsAkE8K7" target="_blank">Cómo Llegar</a>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="recommendations" style="display: flex; justify-content: center;">
+                <div class="reception-container">
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+
+                            <p style="font-family: 'Lobster', cursive; font-style: normal; font-weight: 400; font-size: 36px; color: #ddaf36;">Recepción</p>
+                            <img src="copas.png" alt="copas">
+                            <p style="margin: 0;">Cabañas la semilla</p>
+                            <p style="margin: 0;">Vereda Agua Fría</p>
+                            <p style="margin: 0;">Villanueva - Santander</p>
+                            <br />
+                            <div style="display: flex; justify-content: center;">
+                                <button>6:00 PM</button>
+                                <a href="https://maps.app.goo.gl/Y4DgxALxZ7HgAtnJ9" target="_blank">Cómo Llegar</a>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br />
+        
+        <div class="confirm-wrappertwo" style="background-color: rgba(104, 132, 156, 0.8); width: 100%;">
+            <div style="width: 100%; ">
+                <br /><br /><br />
+                <img src="camerapic.png" alt="copas" class="responsive-image">
+                <div>
+                    <i class="material-icons" style="transform: rotateY(180deg);font-size: 40px; color:white; vertical-align: middle;">trending_flat</i>
+
+                    <span style="color:white;vertical-align: middle;">Desliza para ver todas las fotos</span>
+
+                    <i class="material-icons" style=" font-size: 40px; color:white; vertical-align: middle;">trending_flat</i>
+
+
+
+                </div>
+                <div class="mygallery-wrapper">
+                    <div class="mygallery">
+                        <img src="nosotros.jpeg" alt="copas">
+                        <img src="nosotros.jpeg" alt="copas">
+                        <img src="nosotros.jpeg" alt="copas">
+                        <img src="nosotros.jpeg" alt="copas">
+                        <img src="nosotros.jpeg" alt="copas">
+                        <img src="nosotros.jpeg" alt="copas">
+
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <br /><br />
+
+        <p style="font-family: 'Lobster', cursive; font-style: normal; font-weight: 400; font-size: 36px; color: #ddaf36;">Lluvia de sobres</p>
+        <img src="lluvia.png" alt="Lluvia de sobres">
+        <br /><br /><br />
+
+        <br /><br />
+
+        <div class="confirm-wrapper">
+            <br />
+
+            <p style="font-family: 'Lobster', cursive; font-style: normal; font-weight: 400; font-size: 36px; color: #ddaf36;">Confirmar Asistencia</p>
+            <p>Para nosotros es muy importante que confirmes tu asistencia a nuestra boda.</p>
+            <p class="confirm-message">Por favor escribenos o llámanos.</p>
+            <div class="confirm-buttons">
+                <button onclick="redirectToWhatsApp()" style="background-color: #ddaf36;">
+                    <img src="whatsapp.png" alt="Icono de WhatsApp" style="margin-right: 5px; vertical-align: middle;">
+                    <span style="vertical-align: middle;">Mesh</span>
+                </button>
+
+                <button onclick="redirectToWhatsApp2()" style="background-color: #ddaf36;">
+                    <img src="whatsapp.png" alt="Icono de WhatsApp" style="margin-right: 5px; vertical-align: middle;">
+                    <span style="vertical-align: middle;">Pipe</span>
+                </button>
+            </div>
+            <p class="confirm-message">¡Te esperamos!.</p>
+            <br />
+            <p style="font-family: 'Arizonia', cursive; font-size: 30px;" class="hashtag">#BodaMesh&Pipe</p>
+        </div>
+        <script>
+            function redirectToWhatsApp() {
+                var message = encodeURIComponent("¡Confirmo mi asistencia!");
+                var url = "https://wa.me/+573154758332?text=" + message;
+                window.open(url, "_blank");
+            }
+            function redirectToWhatsApp2() {
+                var message = encodeURIComponent("¡Confirmo mi asistencia!");
+                var url = "https://wa.me/+573108839586?text=" + message;
+                window.open(url, "_blank");
+            }
+        </script>
+
+
+        <div class="invitation-development">
+            <p>Invitación digital</p>
+            <p>Todos los derechos reservados - AndrésFw @2023</p>
+        </div>
+
+        <script>
+            // Fecha de la boda
+            var weddingDate = new Date("November 25, 2023 15:00:00").getTime();
+
+            // Actualizar el contador cada segundo
+            var countdownInterval = setInterval(function () {
+                // Obtener la fecha y hora actual
+                var now = new Date().getTime();
+
+                // Calcular la diferencia entre la fecha actual y la fecha de la boda
+                var difference = weddingDate - now;
+
+                // Calcular los días, horas, minutos y segundos restantes
+                var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                // Actualizar los elementos HTML con los valores calculados
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                // Si la cuenta regresiva ha terminado, mostrar un mensaje
+                if (difference < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = "¡La boda ha llegado!";
+                }
+            }, 1000);
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script>
+            // Inicializar la biblioteca Masonry
+            var grid = document.querySelector('.gallery-container');
+            var masonry = new Masonry(grid, {
+                itemSelector: '.gallery-item',
+                columnWidth: '.gallery-item',
+                percentPosition: true
+            });
+        </script>
+    </div>
+</body>
+</html>
